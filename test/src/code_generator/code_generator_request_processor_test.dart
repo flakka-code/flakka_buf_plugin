@@ -1,8 +1,8 @@
 import 'dart:async';
 
+import 'package:flakka_buf_plugin/pb/google/protobuf/compiler/plugin.pb.dart';
+import 'package:flakka_buf_plugin/pb/google/protobuf/descriptor.pb.dart';
 import 'package:flakka_buf_plugin/src/code_generator/code_generator_request_processor.dart';
-import 'package:flakka_buf_plugin/src/pb/google/protobuf/compiler/plugin.pb.dart';
-import 'package:flakka_buf_plugin/src/pb/google/protobuf/descriptor.pb.dart';
 import 'package:test/test.dart';
 
 void main() {
