@@ -5,11 +5,11 @@ hello:
 
 full: clean export-proto generate
 clean:
-  rm -rf lib/google
+  rm -rf lib/pb
 
 export-proto:
   buf export buf.build/protocolbuffers/wellknowntypes --path google/protobuf/compiler/plugin.proto -o proto
 
 generate:
   buf generate --include-imports --include-wkt
-  dart format lib/google
+  dart format lib/pb
