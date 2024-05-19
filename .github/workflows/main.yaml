@@ -25,3 +25,14 @@ jobs:
   build:
     uses: VeryGoodOpenSource/very_good_workflows/.github/workflows/dart_package.yml@v1
 
+  just_full:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: taiki-e/install-action@just
+      - uses: dart-lang/setup-dart@v1
+      - uses: bufbuild/buf-setup-action@v1.31.0
+      - run: just full
+      - name: Check for Uncommitted Changes
+        run: git diff --exit-code .
+        continue-on-error: false  # This ensures the job fails if changes are found

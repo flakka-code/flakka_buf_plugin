@@ -3,9 +3,13 @@
 hello:
   echo "hello world"
 
+full: clean export-proto generate
+clean:
+  rm -rf lib/google
+
 export-proto:
   buf export buf.build/protocolbuffers/wellknowntypes --path google/protobuf/compiler/plugin.proto -o proto
 
 generate:
   buf generate --include-imports --include-wkt
-  dart format lib/src/pb
+  dart format lib/google
