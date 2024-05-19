@@ -24,6 +24,8 @@ jobs:
 
   build:
     uses: VeryGoodOpenSource/very_good_workflows/.github/workflows/dart_package.yml@v1
+    with:
+     min_coverage: 4
 
   just_full:
     runs-on: ubuntu-latest
